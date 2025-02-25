@@ -1,6 +1,6 @@
-# provider "aws" {
-#   region = "us-west-1"
-# }
+provider "aws" {
+  region = "us-west-1"
+}
 
 # Fetch available availability zones dynamically
 data "aws_availability_zones" "available" {
@@ -33,5 +33,12 @@ resource "aws_subnet" "private_subnet" {
 
   tags = {
     Name = "private-subnet"
+  }
+}
+resource "aws_vpc" "main2" {
+  cidr_block = "10.0.0.0/16"
+
+  tags = {
+    Name = "main2-vpc"
   }
 }
