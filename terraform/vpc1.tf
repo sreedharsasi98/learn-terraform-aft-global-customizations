@@ -42,3 +42,9 @@ resource "aws_vpc" "main2" {
     Name = "main2-vpc"
   }
 }
+
+data "aws_caller_identity" "current" {}
+
+output "aws_account_id" {
+  value = data.aws_caller_identity.current.account_id
+}
