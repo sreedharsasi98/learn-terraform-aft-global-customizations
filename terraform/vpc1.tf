@@ -1,6 +1,6 @@
-provider "aws" {
-  region = "us-west-1" # Change this to your preferred region
-}
+# provider "aws" {
+#   region = "us-west-1" # Change this to your preferred region
+# }
 
 # Create VPC
 resource "aws_vpc" "main" {
