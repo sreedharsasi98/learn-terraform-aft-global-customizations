@@ -48,3 +48,10 @@ data "aws_caller_identity" "current" {}
 output "aws_account_id" {
   value = data.aws_caller_identity.current.account_id
 }
+resource "aws_vpc" "globalvpc" {
+  cidr_block = "10.0.0.0/16"
+
+  tags = {
+    Name = "global-vpc"
+  }
+}
